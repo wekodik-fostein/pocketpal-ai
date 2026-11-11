@@ -129,7 +129,7 @@
     "importError": "Failed to import chat sessions. Please check the file format.",
     "internetSearch": {
       "title": "Internet Search",
-      "description": "Let Pals search the web with their own tools. Bring your own API key — PocketPal never holds your keys or routes your queries.",
+      "description": "Let Pals search the web with their own tools. Bring your own API key — SmallAI never holds your keys or routes your queries.",
       "providerLabel": "Search provider",
       "providerGated": "Coming soon",
       "keyLabel": "API key",
@@ -146,7 +146,7 @@
       "resultCountLabel": "Results per search",
       "resultCountDescription": "Fewer results keep more room in the model's context.",
       "consentTitle": "Searches leave your device",
-      "consentDescription": "When a Pal searches the web, your query is sent to the selected provider over the internet. When a Pal reads a page, the URL and page content may instead be sent to a default reader service (r.jina.ai) if the selected provider has no native reader. Keys and queries are never sent to PocketPal.",
+      "consentDescription": "When a Pal searches the web, your query is sent to the selected provider over the internet. When a Pal reads a page, the URL and page content may instead be sent to a default reader service (r.jina.ai) if the selected provider has no native reader. Keys and queries are never sent to SmallAI.",
       "consentAccept": "I understand",
       "consentRequired": "Accept the disclosure above to set a key and enable search.",
       "consentGivenTitle": "Searching the web is enabled",
@@ -586,13 +586,13 @@
     "screenTitle": "App Info",
     "description": "An app that brings language models directly to your phone. Sits on the shoulders of llama.cpp and llama.rn.",
     "supportProject": "Support the Project",
-    "supportProjectDescription": "If you enjoy using PocketPal AI, please consider supporting the project by:",
+    "supportProjectDescription": "If you enjoy using SmallAI AI, please consider supporting the project by:",
     "githubButton": "Star on GitHub",
     "orBy": "or by",
     "versionCopiedTitle": "Version copied",
     "versionCopiedDescription": "Version information has been copied to clipboard",
     "tour": "Tour",
-    "tourDescription": "Replay the welcome screens to see what PocketPal AI offers.",
+    "tourDescription": "Replay the welcome screens to see what SmallAI AI offers.",
     "showIntroButton": "Show intro again",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service",
@@ -601,10 +601,10 @@
   },
   "feedback": {
     "title": "Send Feedback",
-    "description": "Your voice matters! Tell us how PocketPal AI is helping you and what we can do to make it even more useful.",
+    "description": "Your voice matters! Tell us how SmallAI AI is helping you and what we can do to make it even more useful.",
     "shareThoughtsButton": "Sharing your thoughts",
     "useCase": {
-      "label": "What are you using PocketPal AI for?",
+      "label": "What are you using SmallAI AI for?",
       "placeholder": "e.g., summarization, roleplay, etc."
     },
     "featureRequests": {
@@ -616,7 +616,7 @@
       "placeholder": "Share any other thoughts you may have."
     },
     "usageFrequency": {
-      "label": "How often do you use PocketPal AI? (Optional)",
+      "label": "How often do you use SmallAI AI? (Optional)",
       "options": {
         "daily": "Daily",
         "weekly": "Weekly",
@@ -687,7 +687,7 @@
     },
     "chatEmptyPlaceholder": {
       "noModelsTitle": "No Models Available",
-      "noModelsDescription": "Download a model to start chatting with PocketPal",
+      "noModelsDescription": "Download a model to start chatting with SmallAI",
       "noModelsButton": "Download Model",
       "activateModelTitle": "Activate Model To Get Started",
       "activateModelDescription": "Select the model and download it. After downloading, tap Load next to the model and start chatting.",
@@ -740,7 +740,7 @@
     },
     "modelErrorReportSheet": {
       "title": "Report Model Loading Issue",
-      "privacyNote": "Help us improve PocketPal by sharing details about this error. Review below what will be shared - you can deselect any items you prefer not to include.",
+      "privacyNote": "Help us improve SmallAI by sharing details about this error. Review below what will be shared - you can deselect any items you prefer not to include.",
       "errorMessage": "Error message",
       "modelInfo": "Model Information",
       "modelName": "Name",
@@ -758,7 +758,7 @@
       "submit": "Submit Report",
       "success": {
         "title": "Report Submitted",
-        "message": "Thank you for helping us improve PocketPal. Your report will help us fix this issue."
+        "message": "Thank you for helping us improve SmallAI. Your report will help us fix this issue."
       },
       "error": {
         "title": "Report Failed",
@@ -1254,7 +1254,7 @@
   },
   "camera": {
     "permissionTitle": "Camera Permission Required",
-    "permissionMessage": "PocketPal needs camera access to analyze images",
+    "permissionMessage": "SmallAI needs camera access to analyze images",
     "requestingPermission": "Requesting camera permission...",
     "noDevice": "No camera device found",
     "errorTitle": "Camera Error",
@@ -1268,7 +1268,7 @@
   },
   "video": {
     "permissionTitle": "Camera Permission Required",
-    "permissionMessage": "PocketPal needs camera access for video analysis",
+    "permissionMessage": "SmallAI needs camera access for video analysis",
     "requestingPermission": "Requesting camera permission...",
     "noDevice": "No camera device found",
     "errorTitle": "Camera Error",
@@ -1716,7 +1716,7 @@
     "continueAnywayCta": "Continue anyway",
     "chooseSmallerModelCta": "Choose a smaller model",
     "startLabel": "Start voice mode",
-    "startLockedLabel": "Hands-free voice, PocketPal Plus",
+    "startLockedLabel": "Hands-free voice, SmallAI Plus",
     "startLockedHint": "Opens a short preview. Typing and dictation stay free.",
     "teaserTitle": "Voice conversation is a Plus feature",
     "teaserBody": "Talk hands-free. It answers aloud.",
@@ -1728,14 +1728,14 @@
     "skip": "Skip",
     "skipForNow": "Skip for now",
     "splash": {
-      "brand": "PocketPal"
+      "brand": "SmallAI"
     },
     "screen1": {
       "title": "Meet your pals.",
       "titleAccent": "pals.",
       "body": "Smart little friends that live inside your phone.\nLet’s get you set up - it’ll take a minute.",
       "cta": "Show me Around",
-      "eyebrow": "Welcome to PocketPal"
+      "eyebrow": "Welcome to SmallAI"
     },
     "screen2": {
       "title": "Anytime,\nAnywhere.",
@@ -1822,11 +1822,11 @@
     "retry": "Retry"
   },
   "plus": {
-    "eyebrow": "PocketPal Plus",
+    "eyebrow": "SmallAI Plus",
     "headline": "Push local AI further.",
-    "subline": "Plus keeps PocketPal free and open source. The extra features are our thanks.",
-    "unsupportedSubline": "Plus features don't run on this phone yet. You can still support PocketPal.",
-    "thanksHeadline": "Thank you for keeping PocketPal going.",
+    "subline": "Plus keeps SmallAI free and open source. The extra features are our thanks.",
+    "unsupportedSubline": "Plus features don't run on this phone yet. You can still support SmallAI.",
+    "thanksHeadline": "Thank you for keeping SmallAI going.",
     "thanksSubline": "Plus is unlocked on this device.",
     "features": {
       "handsFreeVoice": "Hands-free voice",
@@ -1862,7 +1862,7 @@
     "noPurchaseFound": "No Plus purchase found.",
     "restoreFailed": "Couldn't reach the store. Try again.",
     "sidebar": {
-      "title": "PocketPal Plus",
+      "title": "SmallAI Plus",
       "unlocked": "Unlocked",
       "subtitleOne": "{{first}}",
       "subtitleTwo": "{{first}}, {{second}}",
