@@ -26,19 +26,9 @@ export const AddPalMenu: React.FC<AddPalMenuProps> = observer(
     const openMenu = () => setMenuVisible(true);
     const closeMenu = () => setMenuVisible(false);
 
-    const handleCreateAssistant = () => {
-      closeMenu();
-      onCreatePal('assistant');
-    };
-
     const handleCreateRoleplay = () => {
       closeMenu();
       onCreatePal('roleplay');
-    };
-
-    const handleCreateVideo = () => {
-      closeMenu();
-      onCreatePal('video');
     };
 
     return (
@@ -58,19 +48,9 @@ export const AddPalMenu: React.FC<AddPalMenuProps> = observer(
           </TouchableOpacity>
         }>
         <Menu.Item
-          icon="account"
-          onPress={handleCreateAssistant}
-          label={l10n.palsScreen.assistant}
-        />
-        <Menu.Item
           icon="drama-masks"
           onPress={handleCreateRoleplay}
           label={l10n.palsScreen.roleplay}
-        />
-        <Menu.Item
-          icon="video"
-          onPress={handleCreateVideo}
-          label={l10n.palsScreen.video}
         />
       </Menu>
     );

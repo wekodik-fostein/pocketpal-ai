@@ -6,7 +6,7 @@ import {
   RefreshControl,
   useWindowDimensions,
 } from 'react-native';
-import {Button, Text} from 'react-native-paper';
+import {Text} from 'react-native-paper';
 import {observer} from 'mobx-react-lite';
 
 import {PlusIcon} from '../../assets/icons';
@@ -24,9 +24,6 @@ import type {PalGridItem} from './palGridLayout';
 import {
   BottomActionBar,
   BottomActionType,
-  CompactAuthBar,
-  ExpandableSearch,
-  FilterChips,
   FilterType,
   PalGridRow,
   ProfileSheet,
@@ -74,7 +71,11 @@ const SectionGrid: React.FC<{
   </View>
 );
 
-export const PalsScreen: React.FC = observer(() => {
+export // Roleplay pals are created with a parameters block (world, location, ...).
+const isRoleplayPal = (pal: PalsHubPal | Pal): boolean =>
+  'parameters' in pal && !!pal.parameters && 'world' in pal.parameters;
+
+const PalsScreen: React.FC = observer(() => {
   const theme = useTheme();
   const styles = createStyles(theme);
   const l10n = useContext(L10nContext);
@@ -82,7 +83,7 @@ export const PalsScreen: React.FC = observer(() => {
 
   // Navigation state
   const [activeAction, setActiveAction] = useState<BottomActionType>('search');
-  const [activeFilter, setActiveFilter] = useState<FilterType>('all');
+  const [activeFilter] = useState<FilterType>('local');
 
   // Search state
   const [isSearchExpanded, setIsSearchExpanded] = useState(false);
@@ -102,7 +103,6 @@ export const PalsScreen: React.FC = observer(() => {
   const [refreshing, setRefreshing] = useState(false);
 
   // Auth bar state
-  const [showAuthBar, setShowAuthBar] = useState(true);
 
   useEffect(() => {
     const runInitialSetup = async () => {
@@ -323,53 +323,15 @@ export const PalsScreen: React.FC = observer(() => {
     </View>
   );
 
-  const restoreRow =
-    purchaseStore.availability === 'ready' ? (
-      <Button
-        testID="restore-purchases-row"
-        mode="text"
-        onPress={() => purchaseStore.restore()}
-        loading={purchaseStore.isRestoring}
-        disabled={purchaseStore.isRestoring}
-        style={styles.restoreRow}>
-        {l10n.palsScreen.purchase.restorePurchases}
-      </Button>
-    ) : undefined;
-
   const {columns, cardWidth} = computePalGridLayout(windowWidth);
-  const filteredData = getFilteredData();
+  // Only roleplay pals are shown on this screen.
+  const filteredData = getFilteredData().filter(isRoleplayPal);
   const rows = chunkIntoRows(filteredData, columns);
   const sectionedData = getSectionedData();
-  const shouldUseSections =
-    (activeFilter === 'all' || activeFilter === 'my-pals') &&
-    sectionedData.length > 1;
+  const shouldUseSections = false && sectionedData.length > 1;
 
   return (
     <View style={styles.container}>
-      {/* Compact Auth Bar - Only for unauthenticated users and when not dismissed */}
-      {!authService.isAuthenticated && showAuthBar && (
-        <CompactAuthBar
-          isAuthenticated={authService.isAuthenticated}
-          onSignInPress={() => setShowAuth(true)}
-          onProfilePress={() => setShowProfile(true)}
-          onDismiss={() => setShowAuthBar(false)}
-        />
-      )}
-
-      {/* Expandable Search */}
-      <ExpandableSearch
-        isExpanded={isSearchExpanded}
-        onToggle={() => setIsSearchExpanded(!isSearchExpanded)}
-        onSearchResults={setSearchResults}
-      />
-
-      {/* Filter Chips */}
-      <FilterChips
-        activeFilter={activeFilter}
-        onFilterChange={setActiveFilter}
-        isAuthenticated={authService.isAuthenticated}
-      />
-
       {/* Main Content */}
       {shouldUseSections ? (
         <ScrollView
@@ -394,7 +356,6 @@ export const PalsScreen: React.FC = observer(() => {
                   onUpdatePress={handleUpdatePress}
                 />
               ))}
-          {restoreRow}
         </ScrollView>
       ) : (
         <FlatList
@@ -410,7 +371,6 @@ export const PalsScreen: React.FC = observer(() => {
           )}
           contentContainerStyle={styles.listContainer}
           ListEmptyComponent={renderEmptyState}
-          ListFooterComponent={restoreRow}
           refreshControl={
             <RefreshControl
               refreshing={refreshing}
