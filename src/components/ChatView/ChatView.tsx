@@ -43,6 +43,7 @@ import {RouterLoadStatus, boundRouterLoad} from '../RouterLoadStatus';
 import {createStyles} from './styles';
 
 import {IncreaseContextSheet} from '../IncreaseContextSheet';
+import {ContextUsageIndicator} from './ContextUsageIndicator';
 import {
   makeFitStatusFor,
   hasFittingUpgrade,
@@ -1216,6 +1217,7 @@ export const ChatView = observer(
                 onNewChat={() => chatSessionStore.resetActiveSession()}
                 onIncreaseContext={() => setIncreaseSheetOpen(true)}
               />
+              <ContextUsageIndicator />
               {onVoiceModePress && voiceModeStore.isOpen ? (
                 <VoiceBar />
               ) : (
