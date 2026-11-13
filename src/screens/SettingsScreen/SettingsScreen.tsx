@@ -49,6 +49,7 @@ import {
 import {AuthSheet} from '../../components/PalsHub';
 import {AccountCard} from './AccountCard';
 import {LocalApiServerCard} from './LocalApiServerCard';
+import {LongTermMemoryCard} from './LongTermMemoryCard';
 import {PurchasesCard} from './PurchasesCard';
 
 import {useTheme} from '../../hooks';
@@ -1690,6 +1691,8 @@ export const SettingsScreen: React.FC = observer(() => {
           <AccountCard />
 
           <LocalApiServerCard />
+
+          <LongTermMemoryCard />
 
           {/* Export Options */}
           <Card elevation={0} style={styles.card}>

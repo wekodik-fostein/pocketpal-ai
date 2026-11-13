@@ -1,6 +1,7 @@
 import type {Pal} from '../types/pal';
 import type {Model} from './types';
 import {generateFinalSystemPrompt} from './palshub-template-parser';
+import {memoryStore} from '../store/MemoryStore';
 
 export interface SystemPromptDependencies {
   pal?: Pal | null;
@@ -14,6 +15,17 @@ export interface SystemPromptDependencies {
  * 3. Empty string if neither exists
  */
 export function resolveSystemPrompt(
+  dependencies: SystemPromptDependencies,
+): string {
+  const base = resolveBaseSystemPrompt(dependencies);
+  const memory = memoryStore.promptBlock;
+  if (!memory) {
+    return base;
+  }
+  return base ? `${base}\n\n${memory}` : memory;
+}
+
+function resolveBaseSystemPrompt(
   dependencies: SystemPromptDependencies,
 ): string {
   const {pal, model} = dependencies;

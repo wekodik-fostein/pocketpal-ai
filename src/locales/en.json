@@ -279,6 +279,15 @@
         "stoppedListening": "The server stopped unexpectedly. Turn it off and on again.",
         "keyUnavailable": "Could not read the API key. Unlock your phone, then turn the server off and on again."
       }
+    },
+    "longTermMemory": {
+      "title": "Long-term memory",
+      "description": "Notes here are added to the system prompt of every chat, including roleplay.",
+      "placeholder": "e.g. My name is Alex, I prefer short answers",
+      "add": "Add",
+      "empty": "No notes yet",
+      "clear": "Clear all",
+      "remove": "Remove note"
     }
   },
   "memory": {
@@ -1106,7 +1115,12 @@
         "total": "Total: ",
         "usage": "Usage: "
       },
-      "byteSizes": ["Bytes", "KB", "MB", "GB"]
+      "byteSizes": [
+        "Bytes",
+        "KB",
+        "MB",
+        "GB"
+      ]
     },
     "chatView": {
       "menuItems": {
